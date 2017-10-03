@@ -48,6 +48,7 @@ public class HomeController implements Initializable{
         student_extra_button.setOnMouseClicked(event -> setNavItemSelected(1));
         mess_leave_button.setOnMouseClicked(event -> setNavItemSelected(2));
         student_details_button.setOnMouseClicked(event -> setNavItemSelected(3));
+        registered_students_button.setOnMouseClicked(event -> setNavItemSelected(4));
         add_extra_button.setOnMouseClicked(event -> setNavItemSelected(5));
     }
 
@@ -62,6 +63,7 @@ public class HomeController implements Initializable{
                     student_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     mess_leave_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     student_details_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    registered_students_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     add_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     break;
                 case 1:
@@ -72,6 +74,7 @@ public class HomeController implements Initializable{
                     student_extra_button.getStyleClass().add("nav_bar_buttons_selected");
                     mess_leave_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     student_details_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    registered_students_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     add_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     break;
                 case 2:
@@ -82,6 +85,7 @@ public class HomeController implements Initializable{
                     student_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     mess_leave_button.getStyleClass().add("nav_bar_buttons_selected");
                     student_details_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    registered_students_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     add_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     break;
                 case 3:
@@ -92,6 +96,18 @@ public class HomeController implements Initializable{
                     student_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     mess_leave_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     student_details_button.getStyleClass().add("nav_bar_buttons_selected");
+                    registered_students_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    add_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    break;
+                case 4:
+                    rootPane.getChildren().removeAll(newPane, scrollPane);
+                    newPane = FXMLLoader.load(getClass().getResource("/com/falalurahman/sacmessapp/registeredStudents/registeredStudents.fxml"));
+                    rootPane.add(newPane,1, 0 , 1 , 9);
+                    student_reg_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    student_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    mess_leave_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    student_details_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    registered_students_button.getStyleClass().add("nav_bar_buttons_selected");
                     add_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     break;
                 case 5:
@@ -102,6 +118,7 @@ public class HomeController implements Initializable{
                     student_extra_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     mess_leave_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     student_details_button.getStyleClass().removeAll("nav_bar_buttons_selected");
+                    registered_students_button.getStyleClass().removeAll("nav_bar_buttons_selected");
                     add_extra_button.getStyleClass().add("nav_bar_buttons_selected");
             }
         }catch (IOException exception){
